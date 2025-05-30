@@ -43,12 +43,7 @@ defmodule InetCidr do
     try do
       {:ok, parse_cidr!(cidr_string, adjust)}
     rescue
-      e ->
-        # do NOT double wrap error tuples
-        case e do
-          {:error, err} -> {:error, err}
-          err -> {:error, err}
-        end
+      err -> {:error, err}
     end
   end
 
@@ -82,12 +77,7 @@ defmodule InetCidr do
     try do
       {:ok, parse_address!(prefix)}
     rescue
-      e ->
-        # do NOT double wrap error tuples
-        case e do
-          {:error, err} -> {:error, err}
-          err -> {:error, err}
-        end
+      err -> {:error, err}
     end
   end
 
@@ -198,12 +188,7 @@ defmodule InetCidr do
     try do
       {:ok, calc_end_address!(start_address, prefix_length)}
     rescue
-      e ->
-        # do NOT double wrap error tuples
-        case e do
-          {:error, err} -> {:error, err}
-          err -> {:error, err}
-        end
+      err -> {:error, err}
     end
   end
 
